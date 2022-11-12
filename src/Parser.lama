@@ -91,7 +91,7 @@ var primary = memo $ eta syntax (
     [Left, map(binop, { "&&" })],
     [Nona, map(binop, { "==", "!=", "<", ">", "<=", ">=" })],
     [Left, map(binop, { "+", "-" })],
-    [Left, map(binop, { "*", "/", "%" })]
+    [ , map(binop, { "*", "/", "%" })]
   },
     primary)),
     exp = memo $ eta syntax (basic | s1=basic s[";"] s2=exp { fun (a) { Seq(s1(Void), s2(a)) } });
